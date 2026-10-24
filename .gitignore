@@ -1,0 +1,32 @@
+# Segredos e credenciais locais. O exemplo pode ser versionado.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+*-credentials.json
+*serviceAccount*.json
+service-account*.json
+**/secrets.json
+
+# Python
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Node e artefatos de build
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Sistema
+.DS_Store
+Thumbs.db
