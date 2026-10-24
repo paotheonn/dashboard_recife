@@ -8,8 +8,8 @@ O repositório publica um dashboard geográfico da cidade do Recife. O gráfico 
 
 ## O que o dashboard faz
 
-- Desenha um mapa `scattermapbox` centralizado em Recife, no estilo `carto-positron`.
-- Separa os pontos em 27 categorias de serviço. Cada categoria é uma camada do mapa, da conservação e limpeza a saúde, educação, comércio e outros grupos.
+- Desenha um mapa `scattermapbox` centralizado em Recife, no estilo `open-street-map`.
+- Separa os pontos em 27 categorias de serviço. Cada categoria é uma camada do mapa, da conservação e limpeza à saúde, educação, comércio e outros grupos.
 - Filtra a visualização por bairro. O controle deslizante usa o prefixo `Bairro=` e lista 93 bairros. A vista inicial é COHAB.
 - Inclui botões de reproduzir e pausar para percorrer os bairros.
 - No hover de cada ponto aparecem o serviço, o bairro, a latitude e a longitude.
@@ -20,7 +20,7 @@ O arquivo não cita a base de dados. Também não traz CNPJ, razão social nem c
 
 - HTML estático
 - Plotly.js 2.24.1, embutido no arquivo (exportação offline do Plotly)
-- Mapa base CARTO Positron. As imagens do mapa são carregadas pela internet
+- Mapa base do OpenStreetMap. As imagens do mapa são carregadas pela internet. O Plotly 2.24.1 também oferece `carto-positron`, mas a CARTO passou a responder esses tiles com a marca "API KEY REQUIRED". O arquivo não guarda chave de API, então o estilo publicado é o que abre sem credencial.
 - Trecho do Hotjar no `<head>`, incluído para coletar feedback de uso
 
 Não há backend, não há instalação de Python ou Node e não há variável de ambiente para abrir o dashboard.
@@ -33,7 +33,7 @@ flowchart TD
   plotly --> mapa["Mapa de pontos por serviço"]
   slider["Slider de bairros"] --> mapa
   play["Botões reproduzir e pausar"] --> mapa
-  mapa --> tiles["Imagens CARTO Positron"]
+  mapa --> tiles["Imagens OpenStreetMap"]
 ```
 
 ## Como abrir localmente
